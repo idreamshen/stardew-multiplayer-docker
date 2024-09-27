@@ -11,7 +11,6 @@ on:
       STEAM_GUARD:
         description: 'Steam Guard'     
         required: false
-        default: 'warning'
   # schedule:
   #   - cron: '28 5 * * *'
   # push:
