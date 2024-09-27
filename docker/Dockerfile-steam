@@ -12,7 +12,10 @@ ENV APP_NAME="StardewValley"
 ENV GAME_PATH="/data/Stardew/game"
 
 ## lib32gcc-s1 is required for steamcmd
-RUN apt-get update && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps lib32gcc-s1 && apt-get clean locale-gen
+RUN apt-get update \
+    && apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq netcat procps lib32gcc-s1 locale-gen \
+    && locale-gen en_US.UTF-8 \
+    && apt-get clean
 
 # Game + ModLoader 1.6.2 4.0.1
 
