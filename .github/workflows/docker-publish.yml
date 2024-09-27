@@ -85,7 +85,7 @@ jobs:
           build-args: |
             STEAM_USER=${{ secrets.STEAM_USER }}
             STEAM_PASS=${{ secrets.STEAM_PASS }}
-            STEAM_GUARD=${{ vars.STEAM_GUARD }}
+            STEAM_GUARD=${{  github.event.inputs.STEAM_GUARD }}
 
       # Sign the resulting Docker image digest except on PRs.
       # This will only write to the public Rekor transparency log when the Docker
