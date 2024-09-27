@@ -43,7 +43,7 @@ RUN chown -R 1000:1000 /data && \
     export HOME=/data && \
     /data/steamcmd/steamcmd.sh +force_install_dir ${GAME_PATH} +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_GUARD} +quit || true
 
-RUN sleep 60s
+RUN sleep 15s
 
 RUN chown -R 1000:1000 /data && \
     export HOME=/data && \
