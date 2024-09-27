@@ -41,6 +41,13 @@ ARG STEAM_GUARD
 
 RUN chown -R 1000:1000 /data && \
     export HOME=/data && \
+    /data/steamcmd/steamcmd.sh +force_install_dir ${GAME_PATH} +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_GUARD} +quit >/dev/null 2>&1
+
+
+RUN sleep 30s
+
+RUN chown -R 1000:1000 /data && \
+    export HOME=/data && \
     /data/steamcmd/steamcmd.sh +force_install_dir ${GAME_PATH} +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_GUARD} +app_update ${SRCDS_APPID} validate +quit
 
 RUN mkdir -p /data/.steam/sdk32 && \
